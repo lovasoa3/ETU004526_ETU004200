@@ -18,6 +18,9 @@
          <li class="nav-item">
           <a class="nav-link" href="etatOk.php">object retourner</a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="tetanon.php">etat non</a>
+        </li>
 
       </ul>
     </div>

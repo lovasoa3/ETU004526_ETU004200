@@ -26,7 +26,8 @@ function listObjectOK($db, $etat) {
         exam_membre.nom, 
         exam_object.nom_object, 
         exam_emprunt.date_emprunt, 
-        exam_emprunt.date_retour
+        exam_emprunt.date_retour,
+        exam_emprunt.etat
     FROM exam_emprunt
     JOIN exam_object ON exam_object.id_object = exam_emprunt.idObject
     JOIN exam_membre ON exam_membre.id_membre = exam_emprunt.idMembre 
@@ -41,6 +42,7 @@ function listObject($db) {
         exam_object.nom_object, 
         exam_emprunt.date_emprunt, 
         exam_emprunt.date_retour
+         exam_emprunt.etat
     FROM exam_emprunt
     JOIN exam_object ON exam_object.id_object = exam_emprunt.idObject
     JOIN exam_membre ON exam_membre.id_membre = exam_emprunt.idMembre 
@@ -55,7 +57,8 @@ function monEmprent($db, $id) {
         exam_membre.nom, 
         exam_object.nom_object, 
         exam_emprunt.date_emprunt, 
-        exam_emprunt.date_retour
+        exam_emprunt.date_retour,
+         exam_emprunt.etat
     FROM exam_emprunt
     JOIN exam_object ON exam_object.id_object = exam_emprunt.idObject
     JOIN exam_membre ON exam_membre.id_membre = exam_emprunt.idMembre 

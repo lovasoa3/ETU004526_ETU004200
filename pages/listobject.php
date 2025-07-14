@@ -36,6 +36,7 @@ $listeObjet = listObject($db);
       <th>DateRetour</th>
     </tr>
   </thead>
+ 
   <tbody class = "text-center align-middle">
    <?php 
    while ($donne = mysqli_fetch_assoc($listeObjet))  {
@@ -49,7 +50,11 @@ $listeObjet = listObject($db);
    ?>
    
   </tbody>
+  
 </table>
+ <form action="emprunter.php" method="post">
+  <button type="button">emprunter</button>
+  </form>
 <a href="ajouter_objet.php">Ajouter des objets</a>
   </div>
   </div>

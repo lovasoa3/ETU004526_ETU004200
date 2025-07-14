@@ -30,4 +30,7 @@ WHERE exam_emprunt.date_retour > NOW();");
 return $statement=mysqli_query($db,$sql);
 
 }
+/**function flitreCategorie(){
+    $
+}**/
 ?>

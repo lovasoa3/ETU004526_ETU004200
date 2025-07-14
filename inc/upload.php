@@ -1,5 +1,16 @@
 <?php
-$uploadDir = __DIR__ . '/photo/';
+if (
+    isset($_POST['nom_object']) &&
+    isset($_POST['idCategorie']) &&
+    isset($_POST['idMenbre']) &&
+    isset($_FILES['fichier']) && $_FILES['fichier']['error'] === 0
+) {
+
+    $nomObject=$_POST['nom_object'];
+    $idcate=$_POST['idCategorie'];
+    $idMembre=$_POST['idMenbre'];
+
+    $uploadDir = __DIR__ . '/photo/';
 $maxSize = 2 * 1024 * 1024;
 $allowedMimeTypes = ['image/jpeg', 'image/png', 'application/pdf'];
 
@@ -30,10 +41,14 @@ $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
  } else {
  echo "Échec du déplacement du fichier.";
  }
- 
+
 } else {
  echo "Aucun fichier reçu.";
 }
+}
+
+
+
 
 
 ?>

@@ -21,7 +21,7 @@ $emailMembre = $_SESSION['email'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>object</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
      <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="creerObject.css">
@@ -60,15 +60,12 @@ $emailMembre = $_SESSION['email'];
 
           
             <div class="mb-3">
-              <label for="idMembre" class="form-label">Membre propriétaire</label>
-              <select class="form-select" id="idMembre" name="idMembre" required>
-                <?php while ($mem = mysqli_fetch_assoc($membres)) { ?>
-                  <option value="<?= $idMembre ?>">
-                    <?= htmlspecialchars($nomMembre) ?> 
-                  </option>
-                <?php } ?>
-              </select>
+              <label for="nom_object" class="form-label">Nom de l'objet</label>
+              <input type="file" class="form-control" id="nom_object" name="fichier" placeholder="Nom de l'objet" required>
             </div>
+                <?php
+                    echo' <input type="hidden" class="form-control" id="nom_object" name="idMenbre" value="'.$idMembre.'" required>';
+              ?>
 
             <div class="d-grid">
               <button type="submit" class="btn btn-success">Ajouter l'objet</button>

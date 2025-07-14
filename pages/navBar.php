@@ -10,7 +10,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="listemprunt.php">Liste des par categorie</a>
+          <a class="nav-link" href="parCategorie.php">Liste des par categorie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="creerObject.php">Ajouter un objet</a>

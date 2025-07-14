@@ -2,7 +2,8 @@
 include ("../inc/function.php") ;
 include ("../inc/connectionBD.php") ;
 $db = connectionDB();
-$listeObjet = listObject($db);
+$etat="non";
+$listeObjet = listObjectOK($db,$etat);
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +22,7 @@ $listeObjet = listObject($db);
 
 <header>
         <div class= "shaky-text">
-             <h1>Listes des objets emprunte en cours</h1>
+             <h1>Listes des objets retourner</h1>
          </div>
     </header>
     <div class="container my-4">
@@ -30,10 +31,10 @@ $listeObjet = listObject($db);
     <table id="montableau" class="table table-bordered table-striped table-hover shadow rounded">
     <thead class = "table-dark text-center">
     <tr>
-      <th>Membre</th>
       <th>Objet</th>
       <th>DateDebut</th>
       <th>DateRetour</th>
+      <th>etat</th>
     </tr>
   </thead>
  
@@ -41,10 +42,10 @@ $listeObjet = listObject($db);
    <?php 
    while ($donne = mysqli_fetch_assoc($listeObjet))  {
     echo ' <tr>
-      <th scope="row">'.$donne['nom'].'</th>
       <td>'.$donne['nom_object'].'</td>
-     <td>'.$donne['date_emprunt'].'</td>
+      <td>'.$donne['date_emprunt'].'</td>
       <td>'.$donne['date_retour'].'</td>
+      <td>'.$donne['etat'].'</td>
     </tr>';
    } 
    ?>

@@ -6,14 +6,17 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="listobject.php">Liste des objets emprunte</a>
+          <a class="nav-link" href="monEmprunt.php">Liste des objets emprunte en cours</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="parCategorie.php">Liste des par categorie</a>
+          <a class="nav-link" href="parCategorie.php">Liste des par cate</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="creerObject.php">Ajouter un objet</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="etatOk.php">object retourner</a>
         </li>
 
       </ul>

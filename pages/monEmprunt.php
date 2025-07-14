@@ -2,7 +2,18 @@
 include ("../inc/function.php") ;
 include ("../inc/connectionBD.php") ;
 $db = connectionDB();
-$listeObjet = listObject($db);
+session_start();
+
+if (!isset($_SESSION['id_membre'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$idMembre = $_SESSION['id_membre'];
+$nomMembre = $_SESSION['nom'];
+$emailMembre = $_SESSION['email'];
+
+$listeObjet = monEmprent($db,$idMembre);
 
 ?>
 <!DOCTYPE html>
@@ -52,12 +63,6 @@ $listeObjet = listObject($db);
   </tbody>
   
 </table>
- <form action="emprunter.php" method="post">
-  <button type="button">emprunter</button>
-  </form>
-<a href="ajouter_objet.php">Ajouter des objets</a>
-  </div>
-  </div>
   
 <script src="..\bootstrap\js\bootstrap.bundle.min.js"></script>
 </body>

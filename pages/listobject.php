@@ -1,3 +1,10 @@
+<?php
+include ("../inc/function.php") ;
+include ("../inc/connectionBD.php") ;
+$db = connectionDB();
+$listeObjet = listObject($db);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,34 +16,28 @@
 </head>
 <body>
 <section>
+    <h1>liste des objets emprunte en cours</h1>
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Membre</th>
+      <th scope="col">Objet</th>
+      <th scope="col">DateDebut</th>
+      <th scope="col">DateRetour</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+   <?php 
+   while ($donne = mysqli_fetch_assoc($listeObjet))  {
+    echo ' <tr>
+      <th scope="row">'.$donne['nom'].'</th>
+      <td>'.$donne['nom_object'].'</td>
+     <td>'.$donne['date_emprunt'].'</td>
+      <td>'.$donne['date_emprunt'].'</td>
+    </tr>';
+   } 
+   ?>
+   
   </tbody>
 </table>
 </section>

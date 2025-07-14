@@ -21,7 +21,6 @@ create table exam_object(
     idMembre int,
     foreign key (idCategorie) references exam_categorie_object(id_categorie),
     foreign key (idMembre) references exam_membre(id_membre)
-
 );
 create table exam_image_object(
     id_image int AUTO_INCREMENT primary key,

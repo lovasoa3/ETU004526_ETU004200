@@ -1,11 +1,16 @@
 <?php
 function insertUser($db ,$nom,$dateNaissance,$genre,$email,$ville,$mdp ,$image_profil){
-$sql=sprintf("INSERT INTO exam_membre(nom,date_naissance,genre,email,ville,mdp,image_profile) VALUES ('','','','','','','','')");
+$sql=sprintf("INSERT INTO exam_membre(nom,date_naissance,genre,email,ville,mdp,image_profile) 
+VALUES ('%s','%s','%s','%s','%s','%s','%s'),$nom,$dateNaissance,$genre,$email,$ville,$mdp,$image_profil");
 $statement=mysqli_query($db,$sql);
 }
 function selectuser($db,$email,$mdp){
-    $sql=sprintf("SELECT * from exam_menbre where email='%s' and mdp='%s'",$email,$mdp);
+    $sql=sprintf("SELECT * from exam_membre where email='%s' and mdp='%s'",$email,$mdp);
     return $statement =mysqli_query($db,$sql);
+}
+function selectCategorie($db){
+    $sql=sprintf("SELECT * FROM `exam_categorie_object`");
+    return $statement=mysqli_query($db,$sql);
 }
 
 

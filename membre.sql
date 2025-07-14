@@ -79,3 +79,16 @@ INSERT INTO `exam_emprunt`( `idObject`, `idMembre`, `date_emprunt`, `date_retour
 (8, 4, '2025-07-10', '2025-07-17'),
 (9, 2, '2025-07-11', '2025-07-18'),
 (10, 3, '2025-07-11', '2025-07-18');
+
+
+SELECT 
+    exam_menbre.nom, 
+    exam_object.nom_object, 
+    exam_emprunt.date_emprunt, 
+    exam_emprunt.date_retour
+FROM exam_emprunt
+JOIN exam_object 
+    ON exam_object.id_object = exam_emprunt.idObject
+JOIN exam_menbre 
+    ON exam_menbre.id_membre = exam_emprunt.idMembre
+WHERE exam_emprunt.date_retour > NOW();

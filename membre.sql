@@ -46,3 +46,36 @@ VALUES ('Alice','2000-05-12','femme','alice@gmail.com','antananarivo','1234','nu
 
 INSERT INTO `exam_categorie_object`(`nom_categorie`)
  VALUES ('esthetique'),('bricolage'),('mecanique'),('cuisine')
+
+
+INSERT INTO `exam_object`(`nom_object`, `idCategorie`, `idMembre`) VALUES
+('Objet_1_1', 1, 1), ('Objet_1_2', 2, 1), ('Objet_1_3', 3, 1), ('Objet_1_4', 4, 1),
+('Objet_1_5', 1, 1), ('Objet_1_6', 2, 1), ('Objet_1_7', 3, 1), ('Objet_1_8', 4, 1),
+('Objet_1_9', 1, 1), ('Objet_1_10', 2, 1);
+
+INSERT INTO `exam_object`(`nom_object`, `idCategorie`, `idMembre`) VALUES
+('Objet_2_1', 3, 2), ('Objet_2_2', 4, 2), ('Objet_2_3', 1, 2), ('Objet_2_4', 2, 2),
+('Objet_2_5', 3, 2), ('Objet_2_6', 4, 2), ('Objet_2_7', 1, 2), ('Objet_2_8', 2, 2),
+('Objet_2_9', 3, 2), ('Objet_2_10', 4, 2);
+INSERT INTO `exam_object`(`nom_object`, `idCategorie`, `idMembre`) VALUES
+('Objet_3_1', 1, 3), ('Objet_3_2', 2, 3), ('Objet_3_3', 3, 3), ('Objet_3_4', 4, 3),
+('Objet_3_5', 1, 3), ('Objet_3_6', 2, 3), ('Objet_3_7', 3, 3), ('Objet_3_8', 4, 3),
+('Objet_3_9', 1, 3), ('Objet_3_10', 2, 3);
+
+INSERT INTO `exam_object`(`nom_object`, `idCategorie`, `idMembre`) VALUES
+('Objet_4_1', 3, 4), ('Objet_4_2', 4, 4), ('Objet_4_3', 1, 4), ('Objet_4_4', 2, 4),
+('Objet_4_5', 3, 4), ('Objet_4_6', 4, 4), ('Objet_4_7', 1, 4), ('Objet_4_8', 2, 4),
+('Objet_4_9', 3, 4), ('Objet_4_10', 4, 4);
+
+
+INSERT INTO `exam_emprunt`( `idObject`, `idMembre`, `date_emprunt`, `date_retour`) VALUES
+(1, 2, '2025-07-05', '2025-07-12'),
+(2, 3, '2025-07-06', '2025-07-13'),
+(3, 1, '2025-07-07', '2025-07-14'),
+(4, 4, '2025-07-08', '2025-07-15'),
+(5, 2, '2025-07-09', '2025-07-16'),
+(6, 3, '2025-07-09', '2025-07-16'),
+(7, 1, '2025-07-10', '2025-07-17'),
+(8, 4, '2025-07-10', '2025-07-17'),
+(9, 2, '2025-07-11', '2025-07-18'),
+(10, 3, '2025-07-11', '2025-07-18');
